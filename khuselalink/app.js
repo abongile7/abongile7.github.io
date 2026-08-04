@@ -1,3 +1,5 @@
+state = loadState();
+
 function openModal() {
   $('#modalBackdrop').classList.remove('hidden');
 }
