@@ -100,6 +100,6 @@ const viewMeta = {
   architecture: ['Integration & Security Plan', 'How production connectors would be governed and isolated']
 };
 
-let state = loadState();
+let state;
 let currentView = 'command';
 let pendingFile = null;
