@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="KhuselaLink lawful digital evidence and investigation demo by Abongile Goci." />
+  <title>KhuselaLink | Lawful Digital Evidence Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="demo-banner">
+    <strong>DEMONSTRATION ONLY</strong>
+    <span>Synthetic records • No live SAPS, Home Affairs, mobile-network or camera access</span>
+  </div>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img"><path d="M32 3l22 8v17c0 14-9 26-22 33C19 54 10 42 10 28V11l22-8z" fill="currentColor" opacity=".22"/><path d="M32 8l17 6v14c0 10-6 20-17 27-11-7-17-17-17-27V14l17-6zm-2 13v8h-8v6h8v8h6v-8h8v-6h-8v-8h-6z" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <h1>KhuselaLink</h1>
+          <p>Evidence Intelligence</p>
+        </div>
+      </div>
+
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-view="dashboard"><span>◫</span> Dashboard</button>
+        <button class="nav-item" data-view="cases"><span>▣</span> Cases</button>
+        <button class="nav-item" data-view="requests"><span>⇄</span> Data Requests</button>
+        <button class="nav-item" data-view="evidence"><span>⬆</span> Evidence Intake</button>
+        <button class="nav-item" data-view="analytics"><span>⌁</span> Link Analysis</button>
+        <button class="nav-item" data-view="authorisations"><span>✓</span> Authorisations</button>
+        <button class="nav-item" data-view="audit"><span>≡</span> Audit Log</button>
+        <button class="nav-item" data-view="architecture"><span>⌘</span> Integration Plan</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="owner-card">
+          <span class="avatar">AG</span>
+          <div><strong>Abongile Goci</strong><small>Solution Founder</small></div>
+        </div>
+        <button class="ghost-button" id="resetDemo">Reset demo data</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" aria-label="Toggle navigation">☰</button>
+        <div class="topbar-title">
+          <h2 id="viewTitle">Command Dashboard</h2>
+          <p id="viewSubtitle">Synthetic operational overview for a controlled pilot</p>
+        </div>
+        <div class="topbar-actions">
+          <label class="role-switcher">
+            <span>Demo role</span>
+            <select id="roleSelect" aria-label="Demo role">
+              <option value="investigator">Investigator</option>
+              <option value="supervisor">Investigation Supervisor</option>
+              <option value="legal">Legal & POPIA Officer</option>
+              <option value="custodian">Data Custodian</option>
+              <option value="admin">System Administrator</option>
+            </select>
+          </label>
+          <button class="primary-button" id="newCaseButton">+ New case</button>
+        </div>
+      </header>
+
+      <section id="content" class="content" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop" role="presentation">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <h3 id="modalTitle">Create demonstration case</h3>
+      <form id="newCaseForm" class="form-grid">
+        <label>Case title<input name="title" required value="Organised vehicle theft pattern" /></label>
+        <label>CAS reference<input name="reference" required value="FS/BFN/0826/0042" /></label>
+        <label>Lead investigator<input name="lead" required value="Abongile Goci (Demo)" /></label>
+        <label>Classification<select name="classification"><option>Restricted</option><option>Confidential</option><option>Internal</option></select></label>
+        <label class="full">Investigation summary<textarea name="summary" required>Demonstration case using synthetic tower events, CCTV sightings and vehicle records to reconstruct a lawful evidence timeline.</textarea></label>
+        <div class="form-actions full"><button type="button" class="ghost-button" id="cancelCase">Cancel</button><button type="submit" class="primary-button">Create case</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
